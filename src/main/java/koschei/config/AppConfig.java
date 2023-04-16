@@ -1,7 +1,6 @@
 package koschei.config;
 
-import koschei.models.Island2;
-import koschei.models.Wood3;
+import koschei.models.*;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -10,8 +9,13 @@ import org.springframework.context.annotation.Configuration;
 @ComponentScan(basePackages = "koschei")
 public class AppConfig {
 
-    @Bean
+    @Bean("island2Bean")
     public static Island2 getIsland(Wood3 wood) {
         return new Island2(wood);
+    }
+
+    @Bean("egg6Bean")
+    public static Egg6 getEgg(Needle7 needle) {
+        return new Egg6(needle);
     }
 }
